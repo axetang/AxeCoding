@@ -1,0 +1,23 @@
+t: io.CopyBuffer()
+ ------------------------------------------------------------------------------------
+ **Definition:
+ func CopyBuffer(dst Writer, src Reader, buf []byte) (written int64, err error)
+ ------------------------------------------------------------------------------------
+ **Description: CopyBuffer is identical to Copy except that it stages through the
+ provided buffer (if one is required) rather than allocating a temporary one. If buf
+ is nil, one is allocated; otherwise if it has zero length, CopyBuffer panics.
+ **要点总结:1.buf是一个字符切片；2. buf如果只声明不初始化分配内存(即为nil)，则会自动分配一个非零
+ len的临时buffer（需要去标准库中看下源码来进一步确认）；3. buf如果声明并初始化为一个0长度的字符
+ 切片，则CopyBuffer函数会抛出panic。
+*************************************************************************************/
+
+package main
+
+import (
+	"fmt"
+	"io"
+	"log"
+	"os"
+	"strings"
+)
+
