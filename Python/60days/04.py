@@ -173,13 +173,14 @@ print(lst[:5])
 #from random import uniform
 x, y = [i for i in range(100)], [
     round(uniform(0, 10), 2) for _ in range(100)]
-print(y)
+# print(y)
 
 
 """
 from pyecharts.charts import Scatter
 import pyecharts.options as opts
 from random import uniform
+"""
 
 
 def draw_uniform_points():
@@ -195,5 +196,3 @@ def draw_uniform_points():
 
 
 draw_uniform_points()
-
-"""
