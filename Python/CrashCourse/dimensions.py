@@ -1,6 +1,0 @@
-dimensions = (200, 50)
-print(dimensions)
-print(dimensions[0])
-print(dimensions[1])
-dimensions = (100, 200)
-print(dimensions)
